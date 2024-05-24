@@ -31,7 +31,12 @@ let petSalon ={
 }
 
 function displayNames(){
-    console.log(petSalon.pets[2].name);
+    let names="";
+    for (let i=0;i<=3;i++){
+        names+=`<p> ${petSalon.pets[i].name} </p>`;
+        console.log(names);
+    }
+    document.gelElementById("petNames").innerHTML=names;
 }
 function countPets(){
     console.log(petSalon.pets.length);
