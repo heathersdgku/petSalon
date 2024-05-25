@@ -3,13 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Register</title>
 </head>
 <body>
-    <div id="petNames">
-        
-    </div>
-
+    <header class="site-init">
+        <div class="menu-bar">
+            <h1>Pet Salon</h1>
+        </div>
+        <div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+            </nav>
+        </div>
+        <div class="header-info">
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis et saepe placeat ipsa excepturi eaque expedita? Cumque cupiditate illum, rem voluptatem sed, debitis iste, voluptatum error nesciunt quisquam suscipit. Ducimus!</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Register a new pet</h2>
+        <div>
+            <div class="input-control">
+                <label>Name:</label>
+                <input type="text" id="txtName">
+            </div>
+            <div class="input-control">
+                <label>Age:</label>
+                <input type="number" id="txtAge">
+            </div>
+            <div class="input-control">
+                <label>Gender:</label>
+                <input type="text" id="txtGender">
+            </div>
+            <div class="input-control">
+                <label>Breed:</label>
+                <input type="text" id="txtBreed">
+            </div>
+            <div class="input-control">
+                <label>Service:*</label>
+                <select id="txtService">
+                    <option value="" selected disabled>--Select an option--</option>
+                    <option value="Grooming">Grooming</option>
+                    <option value="Vaccines">Vaccines</option>
+                </select>
+            </div>
+            <div class="input-control">
+                <label>PetType:*</label>
+                <select id="txtPetType">
+                    <option value="" selected disabled>--Select an option--</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Reptile">Reptile</option>
+                    <option value="Rodent">Rodent</option>
+                </select>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-register" onclick="register()">Register</button>
+            </div>
+        </div>
+    </main>
     <script src="scripts/register.js"></script>
 </body>
 </html>
