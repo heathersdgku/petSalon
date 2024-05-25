@@ -8,11 +8,27 @@ let petSalon ={
     pets:[]
 }
 //constructor
-function Pet(n,a,g,s){
+function Pet(n,a,g,b,s,t){
     this.name=n;
     this.age=a;
     this.gender=g;
+    this.breed=b
     this.service=s;
+    this.petType=t;
+}
+
+function isValid(aPet){
+    let validation=true;
+
+    if(aPet.name==""){
+        validation=false;
+        document.getElementById("txtName").classList.add("alert-error");
+    }
+    if(aPet.service==""){
+        validation=false;
+        document.getElementById("txtService").classList.add("alert-error");
+    }
+    return validation;
 }
 
 function register(){
@@ -24,15 +40,21 @@ function register(){
     let inputPetType=document.getElementById("txtPetType").value;
 
     let newPet= new Pet(inputName,inputAge,inputGender,inputBreed,inputService,inputPetType);
-    petSalon.pets.push(newPet);
-    console.log(petSalon.pets);
+    if(isValid(newPet)){
+        petSalon.pets.push(newPet);
+        displayCards();
+        displayTotalPets();
+        displayServiceCount()
+    }
 }
 
 function init(){
     let pet1 = new Pet("Frodo", 7, "Male", "Labrador","Grooming", "Dog");
     let pet2 = new Pet("Kona", 2, "Female", "Labrador","Vaccines", "Dog");
     petSalon.pets.push(pet1,pet2);
-    console.table(petSalon.pets);
+    displayCards();
+    displayTotalPets();
+    displayServiceCount()
 }
 
 window.onload=init;//waiting to render the html
