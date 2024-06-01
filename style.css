@@ -24,7 +24,7 @@ a{
 
 /*header*/
 .site-init{
-    background-color: rgba(249, 212, 45, 0.97);
+    background-color: rgba(189, 156, 245, 0.97);
     height: 25vh;
 }
 .menu-bar{
@@ -50,9 +50,6 @@ a{
 .menu a:hover{
     border-left: 3px solid black;
     text-shadow: white;
-}
-.btn-register{
-
 }
 
 /*form*/

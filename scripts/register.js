@@ -44,17 +44,28 @@ function register(){
         petSalon.pets.push(newPet);
         displayCards();
         displayTotalPets();
-        displayServiceCount()
+        displayServiceCount();
+        displayRows();
     }
 }
 
-function init(){
-    let pet1 = new Pet("Frodo", 7, "Male", "Labrador","Grooming", "Dog");
-    let pet2 = new Pet("Kona", 2, "Female", "Labrador","Vaccines", "Dog");
-    petSalon.pets.push(pet1,pet2);
+function deletePet(index){
+    petSalon.pets.splice(index,1);
     displayCards();
     displayTotalPets();
-    displayServiceCount()
+    displayServiceCount();
+    displayRows();
+}
+
+function init(){
+    let pet1 = new Pet("Shiloh", 11, "Female", "Beagle","Grooming", "Dog");
+    let pet2 = new Pet("Kona", 2, "Female", "Orange","Vaccines", "Cat");
+    let pet3 = new Pet("Dawg", 7, "Male", "Labrador","Grooming", "Dog");
+    petSalon.pets.push(pet1,pet2,pet3);
+    displayCards();
+    displayTotalPets();
+    displayServiceCount();
+    displayRows();
 }
 
 window.onload=init;//waiting to render the html

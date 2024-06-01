@@ -22,7 +22,23 @@ function displayCards(){
 }
 
 function displayRows(){
-
+    const petTable=document.getElementById("petTable");
+    petTable.innerHTML= "";
+    for (let i=0;i<petSalon.pets.length;i++){
+        let pet = petSalon.pets[i];
+        let row = `
+        <tr>
+        <td>${pet.name}</td>
+        <td>${pet.age}</td>
+        <td>${pet.gender}</td>
+        <td>${pet.breed}</td>
+        <td>${pet.service}</td>
+        <td>${pet.petType}</td>
+        <td><button class="btn btn-danger" onclick="deletePet(${i})">Delete</button></td>
+        </tr>
+        `;
+        petTable.innerHTML+=row;
+    }
 }
 
 function displayTotalPets(){
@@ -39,6 +55,44 @@ function displayServiceCount(){
 
     }
     document.getElementById("totalGrooming").innerHTML=grooming;
+
+    let vaccines=0;
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet=petSalon.pets[i];
+        if(pet.service=="Vaccines"){
+            vaccines++;
+        }
+
+    }
+    document.getElementById("totalVaccines").innerHTML=vaccines;
+    let dogs=0;
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet=petSalon.pets[i];
+        if(pet.petType=="Dog"){
+            dogs++;
+        }
+
+    }
+    document.getElementById("totalDogs").innerHTML=dogs;
+    let cats=0;
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet=petSalon.pets[i];
+        if(pet.petType=="Cat"){
+            cats++;
+        }
+
+    }
+    document.getElementById("totalCats").innerHTML=cats;
+    let other=0;
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet=petSalon.pets[i];
+        if(pet.petType=="Other"){
+            other++;
+        }
+
+    }
+    document.getElementById("totalOther").innerHTML=other;
 }
+
 
 //note: add this display.js file linked to register html

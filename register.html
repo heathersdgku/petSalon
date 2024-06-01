@@ -16,6 +16,7 @@
             <nav  class="menu">
                 <a href="index.html">Home</a>
                 <a href="register.html">Register</a>
+                <a href="services.html">Services</a>
             </nav>
         </div>
     </header>
@@ -52,8 +53,6 @@
                     <option value="" selected disabled>--Select an option--</option>
                     <option value="Dog">Dog</option>
                     <option value="Cat">Cat</option>
-                    <option value="Reptile">Reptile</option>
-                    <option value="Rodent">Rodent</option>
                     <option value="Other">Other</option>
                 </select>
             </div>
@@ -65,23 +64,30 @@
     <section class="container">
         <h2>Registered Pets</h2>
         <div class="info">
-            <p>Total = <span id="total">1000</span></p>
+            <p>Total Pets = <span id="total">1000</span></p>
             <p>Grooming = <span id="totalGrooming">1000</span></p>
+            <p>Vaccines = <span id="totalVaccines">1000</span></p>
+            <p>Dogs = <span id="totalDogs">1000</span></p>
+            <p>Cats = <span id="totalCats">1000</span></p>
+            <p>Other = <span id="totalOther">1000</span></p>
         </div>
-        <table>
+        <div id="petDiv">
+        </div>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Age</th>
+                    <th>Name </th>
+                    <th>Age </th>
+                    <th>Gender </th>
+                    <th>Breed </th>
+                    <th>Service </th>
+                    <th>Pet Type </th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="petTable">
-
             </tbody>
         </table>
-        <div id="petDiv">
-
-        </div>
     </section>
     <script src="scripts/register.js"></script>
     <script src="scripts/display.js"></script>
