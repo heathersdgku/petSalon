@@ -28,6 +28,9 @@ function register(){
     //create the object
     let newService=new Service(inputDescription,inputPrice);
     //display it on the console
-    console.log(newService);
-    $("input").val("");
+
+    if(isValid(newService)){
+        saveItem(newService);//this fn is under storeManager
+        $("input").val("");
+    }
 }

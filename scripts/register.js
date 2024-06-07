@@ -57,6 +57,19 @@ function deletePet(index){
     displayRows();
 }
 
+function getServices(){
+    //read the LS to get the services
+    let serviceList = readItems();
+    let option = "";
+    //travel the array of services
+    for (let i = 0; i < serviceList.length; i++) {
+        //create the <option> on the html
+        option= `<option> ${serviceList[i].description} ${serviceList[i].description} </option> `;
+        //insert the <option> into the html select
+        $("txtService").append(option);
+    }
+}
+
 function init(){
     let pet1 = new Pet("Shiloh", 11, "Female", "Beagle","Grooming", "Dog");
     let pet2 = new Pet("Kona", 2, "Female", "Orange","Vaccines", "Cat");

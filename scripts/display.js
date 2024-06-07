@@ -14,6 +14,7 @@ function displayCards(){
                 <p>${pet.breed}</p>
                 <p>${pet.service}</p>
                 <p>${pet.petType}</p>
+                <button class="btn btn-danger" onclick="deletePet()">Delete</button>
             </div>
         `;
     }
